@@ -7,7 +7,7 @@ export const useSerial = () => {
   const getPorts = async () => {
     try {
       const availablePorts = await navigator.serial.getPorts();
-      console.log("Available ports:", availablePorts);
+      console.log("Available ports:", availablePorts.map((port) => port.getInfo()));
       setPorts(availablePorts);
     } catch (error) {
       console.error("Error fetching ports:", error);
