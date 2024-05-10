@@ -16,7 +16,7 @@ export const useSerial = () => {
     try {
       await port.open({ baudRate: 9600 });
     } catch (error) {
-      console.error("Failed to open port:", error);
+      alert("Error connecting to port:", error);
     }
   };
 

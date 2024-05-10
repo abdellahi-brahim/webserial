@@ -15,10 +15,20 @@ function SerialPortConnector() {
         <ul>
           {ports.map((port, index) => (
             <li key={index}>
+              <div>
+                {port.getInfo().usbVendorId && ( 
+                  <p>Vendor ID: {port.getInfo().usbVendorId}</p>
+                )}
+                {port.getInfo().usbProductId && (
+                  <p>Product ID: {port.getInfo().usbProductId}</p>
+                )}
+                {port.getInfo().bluetoothServiceClassId && (
+                  <p>Bluetooth Service Class ID: {port.getInfo().bluetoothServiceClassId}</p>
+                )}
+              </div>
               <button onClick={() => connectToPort(port)}>
-                Connect to {port.getInfo().productId}
+                Connect to Port
               </button>
-              <pre>{JSON.stringify(port.getInfo(), null, 2)}</pre>
             </li>
           ))}
         </ul>
