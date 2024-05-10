@@ -26,6 +26,8 @@ function SerialPortConnector() {
                   <p>Bluetooth Service Class ID: {port.getInfo().bluetoothServiceClassId}</p>
                 )}
               </div>
+              <pre>{JSON.stringify(port.getInfo(), null, 2)}</pre>
+              {/* convert object to json and print it */}
               <button onClick={() => connectToPort(port)}>
                 Connect to Port
               </button>
