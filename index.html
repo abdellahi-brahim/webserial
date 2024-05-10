@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serial Communication</title>
-</head>
-<body>
-    <h1>Web Serial API Example</h1>
-    <button id="connect">Connect</button>
-    <button id="disconnect" disabled>Disconnect</button>
-    <textarea id="log" rows="10" cols="30" readonly></textarea>
 
-    <script src="app.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Device Connection Portal</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-3">Device Connections</h1>
+    <div id="serialDevices" class="mb-3">
+      <h3>Serial Devices</h3>
+      <ul class="list-group" id="serialList"></ul>
+    </div>
+    <div id="usbDevices" class="mb-3">
+      <h3>USB Devices</h3>
+      <ul class="list-group" id="usbList"></ul>
+    </div>
+    <div id="bluetoothDevices">
+      <h3>Bluetooth Devices</h3>
+      <ul class="list-group" id="bluetoothList"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
+
 </html>
